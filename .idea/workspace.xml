@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e050a1f-e6b7-4a10-b6ae-fa1ff57860d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/demo/search_demo.py" afterPath="$PROJECT_DIR$/demo/search_demo.py" />
-      <change beforePath="$PROJECT_DIR$/demo/views.py" afterPath="$PROJECT_DIR$/demo/views.py" />
-    </list>
+    <list default="true" id="7e050a1f-e6b7-4a10-b6ae-fa1ff57860d5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Graph_Search/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -52,8 +48,8 @@
       <file leaf-file-name="search_demo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo/search_demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3750">
-              <caret line="250" column="22" lean-forward="false" selection-start-line="250" selection-start-column="22" selection-end-line="250" selection-end-column="22" />
+            <state relative-caret-position="-3816">
+              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
               <folding>
                 <element signature="e#14#36#0" expanded="true" />
               </folding>
@@ -61,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -84,10 +80,10 @@
       <list>
         <option value="$PROJECT_DIR$/Graph_Search/demo/views.py" />
         <option value="$PROJECT_DIR$/Graph_Search/urls.py" />
-        <option value="$PROJECT_DIR$/Graph_Search/settings.py" />
         <option value="$PROJECT_DIR$/demo/search_demo.py" />
         <option value="$PROJECT_DIR$/demo/views.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Graph_Search/settings.py" />
       </list>
     </option>
   </component>
@@ -205,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525765670124</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create Django Project">
+      <created>1526299511422</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526299511422</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -296,24 +299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Graph_Search/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/search_demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="250" column="22" lean-forward="false" selection-start-line="250" selection-start-column="22" selection-end-line="250" selection-end-column="22" />
-          <folding>
-            <element signature="e#14#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -332,6 +317,24 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/search_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3816">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="e#14#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graph_Search/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

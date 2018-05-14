@@ -235,7 +235,7 @@ def workflow(s, visual_flag, g):
 		elif info['qtype'] == 1:
 				if len(ans) != 0:
 					for tmp in ans:
-						ans_message = tmp['count(ans)'] + "个"
+						ans_message = str(tmp['count(ans)']) + "个"
 						print ('A:',tmp['count(ans)'],"个")
 		elif info['qtype'] == 2:
 				if len(ans) != 0:

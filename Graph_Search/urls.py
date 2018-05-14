@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from demo.views import getSearch_result
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^getSearch_result/$', getSearch_result, name="getSearch_result"),
 ]

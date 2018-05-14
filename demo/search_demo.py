@@ -243,10 +243,12 @@ def workflow(s, visual_flag, g):
 						ans_message = tmp['s'][info['qfocus']]
 						print ('A:',tmp['s'][info['qfocus']])
 		A_list.append(ans_message)
+
+	time_cost = "%.3fs" % (time() - START_TIME)
 	print ("本次搜索总计用时:%.3fs" % (time() - START_TIME))
 	print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
-	return A_list
+	return time_cost, A_list
 
 # if __name__ == '__main__':
 

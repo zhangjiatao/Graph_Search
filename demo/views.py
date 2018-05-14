@@ -20,13 +20,13 @@ from demo.search_demo import workflow
 def getSearch_result(request):
     if request.method == 'GET':
         try:
-           # s = request.GET.get('text')
-            s = '包头属于哪个省？'
+            s = request.GET.get('text')
+            #s = '包头属于哪个省？'
             print (s)
             visual_flag = 0
             g = Graph(password='123456')
 
-            tmpList = workflow(s, visual_flag, g)
+            time_cost, tmpList = workflow(s, visual_flag, g)
             # tmpList = [
             #     'shit',
             #     'fuck',
@@ -34,6 +34,6 @@ def getSearch_result(request):
         except Exception as e:
             print(e)
             return HttpResponse(json.dumps({'msg': '1'}), content_type="application/json;charset=utf-8")
-        return HttpResponse(json.dumps({'msg': '0', 'llist': tmpList}), content_type="application/json;charset=utf-8")
+        return HttpResponse(json.dumps({'time':time_cost,'msg': '0', 'llist': tmpList}), content_type="application/json;charset=utf-8")
     else:
         return Http404

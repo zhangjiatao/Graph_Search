@@ -77,7 +77,7 @@ def alignment(info):
 
 	qtype_dict = {
 		'多少':1,
-
+		'几个':1,
 	}
 
 	property_dict = {
@@ -171,11 +171,11 @@ def search(text, qtype, g):
 	'''
 	进行搜索
 	'''
-	if qtype == 0:
+	if qtype == 0 or qtype == 1:
 		res = g.data(text + ' return ans')
 		return res
-	if qtype == 1:
-		res = g.data(text + ' return count(ans)')
+	# if qtype == 1:
+	# 	res = g.data(text + ' return count(ans)')
 		return res
 	if qtype == 2:
 		res = g.data(text + ' return s')
@@ -223,6 +223,7 @@ def workflow(s, visual_flag, g):
 		print ('----------------------')
 
 	A_list = []
+	node_list = []
 	# 搜索答案
 	for i in l:
 		ans = search(i, info['qtype'], g)
@@ -231,33 +232,38 @@ def workflow(s, visual_flag, g):
 			if len(ans) != 0:
 				for tmp in ans:
 					ans_message = tmp['ans']['标题']
+					node_list.append(tmp['ans'])
+					A_list.append(ans_message)
 					print ('A:',tmp['ans']['标题'])
 		elif info['qtype'] == 1:
 				if len(ans) != 0:
+					ans_message = str(len(ans)) + "个"
+					A_list.append(ans_message)
 					for tmp in ans:
-						ans_message = str(tmp['count(ans)']) + "个"
-						print ('A:',tmp['count(ans)'],"个")
+						node_list.append(tmp['ans'])
 		elif info['qtype'] == 2:
 				if len(ans) != 0:
 					for tmp in ans:
 						ans_message = tmp['s'][info['qfocus']]
+						node_list.append(tmp['s'])
+						A_list.append(ans_message)
 						print ('A:',tmp['s'][info['qfocus']])
-		A_list.append(ans_message)
+
 
 	time_cost = "%.3fs" % (time() - START_TIME)
 	print ("本次搜索总计用时:%.3fs" % (time() - START_TIME))
 	print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
-	return time_cost, A_list
-
+	return time_cost, A_list, node_list
+#
 # if __name__ == '__main__':
-
-
+#
+#
 # 	visual_flag = 0;
 # 	if(len(sys.argv) == 2):
 # 		if(sys.argv[1] == 'v'):
 # 			visual_flag = 1;
-
+#
 # 	query_list = [
 # 		 # 询问实体属性
 # 		 '包头的面积是多少？',
@@ -267,17 +273,17 @@ def workflow(s, visual_flag, g):
 # 		 '南京市有多少个区？', # 计数类型
 # 		 '江苏省有多少个村？', # 计数类型
 # 		 # 询问实体类型
-# 		 '包头有哪些区？',	# 询问实体类型(一或多) 
+# 		 '包头有哪些区？',	# 询问实体类型(一或多)
 # 		 '包头属于哪个省?',
 # 		 '南京属于哪个省？',
 # 		 '江苏有哪些市？',
 # 		 '南京有哪些区？',
 # 		 # TODO
 # 		 '江苏省面积在50000以上的市有哪些？'
-
+#
 # 	]
-
+#
 # 	g = Graph(password = '123456')
-
+#
 # 	for query in query_list:
 # 		workflow(query, visual_flag, g)

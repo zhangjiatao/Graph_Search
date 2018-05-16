@@ -26,7 +26,7 @@ def getSearch_result(request):
             visual_flag = 0
             g = Graph(password='123456')
 
-            time_cost, tmpList = workflow(s, visual_flag, g)
+            time_cost, ansList, nodeList  = workflow(s, visual_flag, g)
             # tmpList = [
             #     'shit',
             #     'fuck',
@@ -34,6 +34,6 @@ def getSearch_result(request):
         except Exception as e:
             print(e)
             return HttpResponse(json.dumps({'msg': '1'}), content_type="application/json;charset=utf-8")
-        return HttpResponse(json.dumps({'time':time_cost,'msg': '0', 'llist': tmpList}), content_type="application/json;charset=utf-8")
+        return HttpResponse(json.dumps({'time':time_cost,'msg': '0', 'anslist': ansList, 'nodeList': nodeList}), content_type="application/json;charset=utf-8")
     else:
         return Http404

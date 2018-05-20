@@ -4,5 +4,5 @@
 * url : getSearch_result
 * in  : text
 * out : 
-    获取成功{"msg" : "0", "llist" : [{ans1,ans2,..}, "time"]
+    获取成功{"msg" : "0", "anslist" : [{ans1,ans2,..}, "time", "nodeList":{node1, node2}]
     获取失败{"msg": "1"}

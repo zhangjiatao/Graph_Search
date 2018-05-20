@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '122.112.238.70',
     '0.0.0.0',
+    '127.0.0.1',
 ]
 
 
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'Graph_Search.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': ['front-end']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

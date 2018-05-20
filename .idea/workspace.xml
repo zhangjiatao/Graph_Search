@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e050a1f-e6b7-4a10-b6ae-fa1ff57860d5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Graph_Search/settings.py" afterPath="$PROJECT_DIR$/Graph_Search/settings.py" />
-      <change beforePath="$PROJECT_DIR$/Graph_Search/urls.py" afterPath="$PROJECT_DIR$/Graph_Search/urls.py" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -246,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526299511422</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create Django Project">
+      <created>1526809619795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526809619795</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">

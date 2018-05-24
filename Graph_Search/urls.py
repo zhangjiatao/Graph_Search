@@ -23,7 +23,8 @@ from django.conf import settings
 urlpatterns = [
 
     url(r'^$', TemplateView.as_view(template_name="index.html")),
-    #url(r'^static/(?P<path>.*)$',serve,{'document_root': settings.STATIC_ROOT}),
+    url(r'^force/$', TemplateView.as_view(template_name="force.html")),
+    url(r'^hello/$', TemplateView.as_view(template_name="hello.html")),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^getSearch_result/$', getSearch_result, name="getSearch_result"),

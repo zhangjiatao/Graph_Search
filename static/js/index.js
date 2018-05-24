@@ -10,14 +10,13 @@ function getUrlParam(name) {
 
 $(document).ready(function(){
 
+    // window.location.href='file:///D:/大学/大三/创训/Graph_Search/templates/index.html?question=桂林在哪个省';
+
     //搜索提交
     $("#button_search").on('click',function(){
         var ques = $('#editbox_search').val();
-        var newUrl = 'http://122.112.238.70:8000?question=' + encodeURI(ques);
-        // window.location.href = newUrl;
-        // window.alert(newUrl);
-        window.location.assign(newUrl);
-        // history.pushState(null.null,newUrl);
+        var newUrl = 'http://122.112.138.70:8000?question=' + encodeURI(ques);
+        window.location.href = newUrl;
     })
 
     if(getUrlParam('question')!=null){
@@ -51,7 +50,7 @@ $(document).ready(function(){
                         }
                     }
                     //添加结点名称至知识图谱调用
-                    var url = 'http://122.112.238.70:8000/force/?names=' + encodeURI(names);
+                    var url = 'http://122.112.138.70:8000/force/?names=' + encodeURI(names);
                     $('#knowledgeGraph').attr('src', url);
                 }else if(data.msg=="1"){
                     window.alert("服务器返回错误");

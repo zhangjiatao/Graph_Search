@@ -24,11 +24,11 @@
             var r = decodeURI(window.location.search).substr(1).match(reg);  //匹配目标参数
             if (r != null) return unescape(r[2]); return null; //返回参数值
         }	
-		var nodes = [ ];
+		var nodes = new Array();
 		var t = 0;
 		var names = new Array();
-		names = String(getUrlParam('names')).split(",");
-		for (var i = names.length - 1; i >= 0; i--) {
+		names = String(getUrlParam('nodes')).split(",");
+		for (var i =  0; i < names.length; i++) {
 			nodes[t] = { name: names[i] };
 			t++;
 		}
@@ -36,9 +36,16 @@
 		// var edges = [  { source : 0  , target: 1 } , { source : 0  , target: 2 } ,
 		// 			   { source : 0  , target: 3 } , { source : 1  , target: 4 } ,
 		// 			   { source : 1  , target: 5 } , { source : 1  , target: 6 }  ];	
+		var edges = new Array();
+        var k = 0;
+        var relations = new Array();
+        relations = String(getUrlParam('edges')).split(",");
+        for (var i = relations.length - 1; i >= 0; i--) {
+        	var r = relations[i].split("t");
+        	edges[k] = { source : parseInt(r[0]) , target : parseInt(r[1]) };
+        	k++;
+        }
 
-		var edges = [ ];
-		
 		var width = 320;
 		var height = 320;
 				

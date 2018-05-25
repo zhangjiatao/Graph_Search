@@ -1,5 +1,3 @@
-var names = [];
-var t = 0;
 
 //获取地址栏中的参数
 function getUrlParam(name) {
@@ -10,12 +8,10 @@ function getUrlParam(name) {
 
 $(document).ready(function(){
 
-    // window.location.href='file:///D:/大学/大三/创训/Graph_Search/templates/index.html?question=桂林在哪个省';
-
     //搜索提交
     $("#button_search").on('click',function(){
         var ques = $('#editbox_search').val();
-        var newUrl = 'http://122.112.138.70:8000?question=' + encodeURI(ques);
+        var newUrl = 'http://122.112.238.70:8000/?question=' + encodeURI(ques);
         window.location.href = newUrl;
     })
 
@@ -41,16 +37,24 @@ $(document).ready(function(){
                     for (var i = data.nodeList.length - 1; i >= 0; i--) {
                         if(data.nodeList[i].hasOwnProperty('标题'))
                             $("#nodes").append('<h4>'+data.nodeList[i]['标题']+'</h4>');
-                        //保存每个结点名称
-                        names[t]=data.nodeList[i]['标题'];
-                        t = t + 1;
                         //添加每个相关实体的详细信息
                         for (var key in data.nodeList[i]) {
                             if(key!="标题") $("#nodes").append('<small>'+key+'：'+data.nodeList[i][key]+'；</small>');
                         }
                     }
-                    //添加结点名称至知识图谱调用
-                    var url = 'http://122.112.138.70:8000/force/?names=' + encodeURI(names);
+                    //传递参数给知识图谱调用
+                    var nodes = new Array();
+                    var t = 0;
+                    for (var i = 0; i < data.nodesGraph.length; i++) {
+                        nodes[t++] = data.nodesGraph[i]['name'];
+                    }
+                    var edges = new Array();
+                    var k = 0;
+                    for (var i = data.edgesGraph.length - 1; i >= 0; i--) {
+                        edges[k++] = String(data.edgesGraph[i]['source']) + 't' + String(data.edgesGraph[i]['target']);
+                    }
+                    var url = 'http://122.112.238.70:8000/force/?nodes='
+                                + encodeURI(nodes) + '&edges=' + encodeURI(edges);
                     $('#knowledgeGraph').attr('src', url);
                 }else if(data.msg=="1"){
                     window.alert("服务器返回错误");

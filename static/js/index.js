@@ -36,10 +36,10 @@ $(document).ready(function(){
                     //遍历相关实体列表
                     for (var i = data.nodeList.length - 1; i >= 0; i--) {
                         if(data.nodeList[i].hasOwnProperty('标题'))
-                            $("#nodes").append('<h4>'+data.nodeList[i]['标题']+'</h4>');
+                            $("#nodes").append('<h3>'+data.nodeList[i]['标题']+'</h3>');
                         //添加每个相关实体的详细信息
                         for (var key in data.nodeList[i]) {
-                            if(key!="标题") $("#nodes").append('<small>'+key+'：'+data.nodeList[i][key]+'；</small>');
+                            if(key!="标题") $("#nodes").append(key+'：'+data.nodeList[i][key]+'；');
                         }
                     }
                     //传递参数给知识图谱调用

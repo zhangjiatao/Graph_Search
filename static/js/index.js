@@ -32,7 +32,10 @@ $(document).ready(function(){
                 if(data.msg=="0"){
                     //添加问题及答案
                     $("#question").html('问题“'+getUrlParam('question')+'”的答案为：');
-                    $("#answer").html(data.anslist);
+                    $("#answer").html('');
+                    for (var i = data.anslist.length - 1; i >= 0; i--) {
+                        $("#answer").append(data.anslist[i]+"&nbsp;&nbsp;&nbsp;");
+                    }
                     //遍历相关实体列表
                     for (var i = data.nodeList.length - 1; i >= 0; i--) {
                         if(data.nodeList[i].hasOwnProperty('标题'))

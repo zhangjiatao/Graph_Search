@@ -69,7 +69,9 @@ def alignment(info):
 		'县级':'县级', '县':'县级', '区级':'县级', '区':'县级',
 		'乡级':'乡级', '乡':'乡级',
 		'村级':'村', '村':'村',
-		'水电站':'水电站'
+		'水电站':'水电站',
+		'大坝':'大坝',
+		'水库':'水库'
 	}
 
 	qverb_dict = {
@@ -153,7 +155,10 @@ def createCypher(info, g):
 		'县级': 4,
 		'乡级': 5,
 		'村': 6,
-		'水电站': 7,
+		'水电站': 6,
+		'大坝': 6,
+		'水库':6,
+
 	}
 	dis = abs(level_dict[entity_type] - level_dict[info['qfocus']])
 
@@ -162,9 +167,10 @@ def createCypher(info, g):
 
 		# 加班产生候选搜索语句candidate
 		for j in range(dis - 1):
-			candidate = candidate + '-[:%s]-()' % info['qverb']
-		candidate = candidate + '-[:%s]-(ans:%s)' % (info['qverb'], info['qfocus'])
-
+			# candidate = candidate + '-[:%s]-()' % info['qverb']
+			candidate = candidate + '-[]-()'
+		#candidate = candidate + '-[:%s]-(ans:%s)' % (info['qverb'], info['qfocus'])
+		candidate = candidate + '-[]-(ans:%s)' % (info['qfocus'])
 		candidate_list.append([candidate, index]) # 将该候选搜索语句和其对应的搜索起点下标一起放入candidate_list
 	return entity_list, candidate_list
 
@@ -291,15 +297,15 @@ def workflow(s, visual_flag, g):
 
 	time_cost = "%.3fs" % (time() - START_TIME)
 	print ("本次搜索总计用时:%.3fs" % (time() - START_TIME))
-	print ('------------------ans_list------------------')
-	print (A_list)
-	print ('------------------node_list------------------')
-	print(node_list)
-	print ('------------------edges_graph------------------')
-	print(edges_graph)
-	print ('------------------nodes_graph------------------')
-	print(nodes_graph)
-	print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+	# print ('------------------ans_list------------------')
+	# print (A_list)
+	# print ('------------------node_list------------------')
+	# print(node_list)
+	# print ('------------------edges_graph------------------')
+	# print(edges_graph)
+	# print ('------------------nodes_graph------------------')
+	# print(nodes_graph)
+	# print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 	return time_cost, A_list, node_list, edges_graph, nodes_graph
 
@@ -313,24 +319,27 @@ def workflow(s, visual_flag, g):
 
 # 	query_list = [
 # 		 # 直接对实体询问
-# 		 '南京',
-# 		 '包头',
-# 		 '国务院三峡工程建设委员会办公室', # 尚存问题，因为无法构造用户词典，这个名词会被拆开
-# 		 # 询问实体属性
-# 		 '包头的面积是多少？',
-# 		 '南京的编号是多少？',
-# 		 '南京的全称是什么？',
-# 		 # 计数类型
-# 		 '南京市有多少个区？', # 计数类型
-# 		 # '江苏省有多少个村？', # 计数类型
-# 		 # 询问实体类型
-# 		 '包头有哪些区？',	# 询问实体类型(一或多)
-# 		 '包头属于哪个省?',
-# 		 '南京属于哪个省？',
-# 		 '江苏有哪些市？',
-# 		 '南京有哪些区？',
-# 		 # TODO
-# 		 '江苏省面积在50000以上的市有哪些？'
+# 		 # '南京',
+# 		 # '包头',
+# 		 # '江宁区的水库有多少？',
+# 		 # '江宁区的大坝有哪些？',
+# 		 # '江宁区的水电站有哪些？',
+# 		 # # '国务院三峡工程建设委员会办公室', # 尚存问题，因为无法构造用户词典，这个名词会被拆开
+# 		 # # # 询问实体属性
+# 		 # '包头的面积是多少？',
+# 		 # '南京的编号是多少？',
+# 		 # '南京的全称是什么？',
+# 		 # # 计数类型
+# 		 # '南京市有多少个区？', # 计数类型
+# 		 # # '江苏省有多少个村？', # 计数类型
+# 		 # # 询问实体类型
+# 		 # '包头有哪些区？',	# 询问实体类型(一或多)
+# 		 # '包头属于哪个省?',
+# 		 # '南京属于哪个省？',
+# 		 # '江苏有哪些市？',
+# 		 # '南京有哪些区？',
+# 		 # # TODO
+# 		 # '江苏省面积在50000以上的市有哪些？'
 
 # 	]
 
